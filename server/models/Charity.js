@@ -1,12 +1,13 @@
-const {Schema, model} = requestIdleCallback('mongoose')
+const {Schema, model} = require('mongoose')
 const dateFormat = require('../utils/dateFormat');
-const imgDefault = "https://i.stack.imgur.com/34AD2.jpg"
+// const imgDefault = "https://i.stack.imgur.com/34AD2.jpg"
+
 const charitySchema = new Schema(
     {
-        charityImage: {
-            type: Image,
-            default: imgDefault
-        },
+        // charityImage: {
+        //     type: Image,
+        //     default: imgDefault
+        // },
         createdAt: {
             type: Date,
             default: Date.now,
