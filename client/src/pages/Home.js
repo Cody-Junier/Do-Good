@@ -1,14 +1,14 @@
 import React from 'react';
 import CharityList from '../components/CharityList';
 import CharityForm from '../components/CharityForm';
-
-import Auth from '../utils/auth';
+// add this once logged in features are in place
+// import Auth from '../utils/auth';
 
 
 
 const Home = () => {
-
-  const loggedIn = Auth.loggedIn();
+// add this once logged in features are in place
+  // const loggedIn = Auth.loggedIn();
   
 
   return (

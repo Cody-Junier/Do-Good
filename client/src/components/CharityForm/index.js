@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React
+// use once needed, { useState }
+ from 'react';
 
 /*Here we will import queries and mutation*/
 
