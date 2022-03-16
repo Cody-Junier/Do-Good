@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Imported pages
 
@@ -18,21 +18,25 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-     
+
       <Router>
         <div >
           <Header />
           <div >
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/charity" component={SingleCharity} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/charity" component={SingleCharity} />
+
+              <Route component={NoMatch} />
+            </Switch>
           </div>
           <Footer />
         </div>
       </Router>
-   
+
 
     </div>
   );
