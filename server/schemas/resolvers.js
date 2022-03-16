@@ -1,5 +1,5 @@
 const {User, Charity} = require('../models')
-
+// Put User in here
 const resolvers = {
     Query: {
       charities: async () => {
