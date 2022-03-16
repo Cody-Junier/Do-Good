@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+/*Here we will import queries and mutation*/
 
 
-const CharityForm= () => {
-  
+const CharityForm = () => {
+
   return (
-    <header >
-      
-    </header>
+    <section>
+     
+      <form
+        
+       
+      >
+        <textarea
+          placeholder="Here's a new charity"
+         
+        ></textarea>
+        <button  type="submit">
+          Submit
+        </button>
+      </form>
+    </section>
   );
 };
 
