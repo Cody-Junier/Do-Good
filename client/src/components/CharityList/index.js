@@ -4,9 +4,25 @@ import React from 'react';
 const CharityList= () => {
   
   return (
-    <header >
+    <section>
+    <h3></h3>
+    
+        <div>
+          <p >
+            <Link
+            >
+              
+            </Link>
+            
+          </p>
+          <div>
+            <Link >
+              
+            </Link>
+          </div>
+        </div>
       
-    </header>
+  </section>
   );
 };
 
