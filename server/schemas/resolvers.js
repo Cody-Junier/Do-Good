@@ -1,7 +1,6 @@
 const {User, Charity} = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { populate } = require('../models/User');
 
 const resolvers = {
     Query: {
@@ -27,7 +26,7 @@ const resolvers = {
     },
     Mutation: {
       addUser: async (parent, args) => {
-        const user = await User. create(args);
+        const user = await User.create(args);
         const token = signToken(user);
   
         return { token, user };
@@ -48,13 +47,16 @@ const resolvers = {
         const token = signToken(user);
         return { token, user };
       },
-      addCharity: async (parent, image , context) => {
+    //   Have to remove image for now, must learn how to implement it later
+      addCharity: async (parent , context) => {
         if (context.user) {
-          const charity = await Charity.create({ ...image, username: context.user.username });
+            // removed ...image in create
+          const charity = await Charity.create({ username: context.user.username });
       
           await User.findByIdAndUpdate(
             { _id: context.user._id },
-            { $push: { charities: { image, username: context.user.username } } },
+            // removed image before username:
+            { $push: { charities: { username: context.user.username } } },
             { new: true }
           );
       

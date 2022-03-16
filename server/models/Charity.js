@@ -1,13 +1,14 @@
 const {Schema, model} = require('mongoose')
 const dateFormat = require('../utils/dateFormat');
-const imgDefault = "https://i.stack.imgur.com/34AD2.jpg"
+// const imgDefault = "https://i.stack.imgur.com/34AD2.jpg" - see below comment
 
 const charitySchema = new Schema(
     {
-        charityImage: {
-            type: Image,
-            default: imgDefault
-        },
+        // pending: will want an image, need to research implementation
+        // charityImage: {
+        //     type: Image,
+        //     default: imgDefault
+        // },
         createdAt: {
             type: Date,
             default: Date.now,
