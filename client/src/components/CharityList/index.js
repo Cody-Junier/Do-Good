@@ -9,16 +9,11 @@ const CharityList= () => {
     
         <div>
           <p >
-            <Link
-            >
-              
-            </Link>
+            
             
           </p>
           <div>
-            <Link >
-              
-            </Link>
+          
           </div>
         </div>
       

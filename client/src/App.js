@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <ApolloProvider client={client}>
+     
       <Router>
         <div >
           <Header />
@@ -32,7 +32,7 @@ function App() {
           <Footer />
         </div>
       </Router>
-    </ApolloProvider>
+   
 
     </div>
   );

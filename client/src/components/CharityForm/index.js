@@ -10,11 +10,11 @@ const CharityForm = () => {
      
       <form
         
-        onSubmit={handleFormSubmit}
+       
       >
         <textarea
           placeholder="Here's a new charity"
-          onChange={handleChange}
+         
         ></textarea>
         <button  type="submit">
           Submit
