@@ -16,6 +16,9 @@ type Charity {
 type Query {
     charities: [Charity]
 }
+type Mutation {
+    
+}
 `;
 
 module.exports = typeDefs;
