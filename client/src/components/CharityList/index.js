@@ -7,17 +7,13 @@ const CharityList= () => {
   
   return (
     <section>
-    <h3>Test</h3>
+    <h3>Charity List</h3>
+    <p>This is some fake charity card texdfsklsdfjsdhfkjsdfhsjkhsdjksdhksdjhsdfhsdfajlhk
+      sdhfsdfhlsdfkhadfkjdhsjdfjksdhaksdhfklhsffkdfsjkhlskjsdfhkfjhfdsksdhksdjfhfksdjshdfkj
+      sdjfsfdsdfjslsfdhksdfaklhklsdflsfkhfskfhfsdkfhfkhfdsfkhjsdfklhfsdslkhsdakjsd
+    </p>
     
-        <div>
-          <p >
-            this is also a test
-            
-          </p>
-          {/* <div>
-          what is this div for?
-          </div> */}
-        </div>
+        
       
   </section>
   );
