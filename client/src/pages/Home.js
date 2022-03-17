@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <main>
       <div >
-        <h1>This is Test</h1>
+        <h1>This is Test (Home Page)</h1>
         
           <div >
             <CharityForm />
