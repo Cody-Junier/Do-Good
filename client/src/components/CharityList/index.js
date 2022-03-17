@@ -12,7 +12,7 @@ const CharityList = () => {
   return (
     <section>
 
-      {/* This is query data to be passed after queries are set up
+      {/* This is query data to be passed after queries are set up into the cards
 
       <div>
       <h3>{title}</h3>
@@ -39,6 +39,8 @@ const CharityList = () => {
 
 
       {/*Hardcoded card*/}
+      <main>
+        <h1>This is The Charity Header</h1>
       <div>
         <h3>We help the eldery charity</h3>
         <p>This charity helps old folks because jknsaknckjkjdsnk dcsscsd cd d cds cd c ds ds  cd cd
@@ -71,6 +73,7 @@ const CharityList = () => {
           <Link to={`/charity`}>LINK TO SINGLE CHARITY</Link>
         </p>
       </div>
+      </main>
 
 
 
