@@ -19,6 +19,17 @@ import SingleCharity from './pages/SingleCharity';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
+
 function App() {
   return (
     <div className="App">
