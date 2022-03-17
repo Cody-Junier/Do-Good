@@ -1,8 +1,14 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
+
 import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
 
 //Imported pages
 
