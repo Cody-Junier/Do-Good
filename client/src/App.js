@@ -39,7 +39,7 @@ function App() {
 
         <Router>
           <div >
-            <Header />
+           {/*} <Header />*/}
             <div >
               <Switch>
                 <Route exact path="/" component={Home} />
