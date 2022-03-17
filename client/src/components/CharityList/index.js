@@ -3,7 +3,11 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 
 
-const CharityList= () => {
+
+  const CharityList = ({ charity, title }) => {
+    if (!charity.length) {
+      return <h3>No Charity's Yet</h3>;
+    }
   
   return (
     <section>
