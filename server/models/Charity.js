@@ -20,12 +20,16 @@ const charitySchema = new Schema(
             minlength: 20,
             maxlength: 400
         },
+        charityUrl:{
+            type: String,
+            require: true
+        },
         imageUrl:{
             type: String,
+            require: true
         },
         username: {
             type: String,
-            required: true
         }
     }
 )

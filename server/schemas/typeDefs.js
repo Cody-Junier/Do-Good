@@ -13,8 +13,9 @@ const typeDefs = gql`
     _id: ID
     createdAt: String
     username: String
-    url: String
-    description: String
+    charityUrl: String
+    charityDescription: String
+    charityImg: String
   }
   type User {
     _id: ID

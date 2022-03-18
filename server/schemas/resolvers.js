@@ -48,22 +48,22 @@ const resolvers = {
         return { token, user };
       },
     //   Have to remove image for now, must learn how to implement it later
-      addCharity: async (parent , context) => {
-        if (context.user) {
+      addCharity: async (parent , args) => {
+        // if (context.user) {
             // removed ...image in create
-          const charity = await Charity.create({ username: context.user.username });
+          const charity = await Charity.create(args);
       
-          await User.findByIdAndUpdate(
-            { _id: context.user._id },
-            // removed image before username:
-            { $push: { charities: { username: context.user.username } } },
-            { new: true }
-          );
+          // await User.findByIdAndUpdate(
+          //   { _id: context.user._id },
+          //   // removed image before username:
+          //   { $push: { charities: { username: context.user.username } } },
+          //   { new: true }
+          // );
       
           return charity;
-        }
+        // }
       
-        throw new AuthenticationError('You need to be logged in!');
+        // throw new AuthenticationError('You need to be logged in!');
       },
     }
 };
