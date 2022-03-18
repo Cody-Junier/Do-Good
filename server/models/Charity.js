@@ -5,10 +5,10 @@ const dateFormat = require('../utils/dateFormat');
 const charitySchema = new Schema(
     {
         // pending: will want an image, need to research implementation
-        // charityImage: {
-        //     type: Image,
-        //     default: imgDefault
-        // },
+        charityName: {
+            type: String,
+            require: "You must give the Charity a name"
+        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -19,6 +19,9 @@ const charitySchema = new Schema(
             require: 'Please tell us about this Charity.',
             minlength: 20,
             maxlength: 400
+        },
+        imageUrl:{
+            type: String,
         },
         username: {
             type: String,

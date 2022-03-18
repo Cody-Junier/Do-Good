@@ -13,6 +13,7 @@ const typeDefs = gql`
     _id: ID
     createdAt: String
     username: String
+    url: String
     description: String
   }
   type User {
