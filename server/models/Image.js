@@ -1,5 +1,5 @@
 const {Schema, model} = require('mongoose')
-
+// implement cloudinary + multer SDK
 const imageSchema = new Schema(
     {
         image: {

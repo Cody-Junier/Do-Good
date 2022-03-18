@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/Cody-Junier/Do-Good#readme",
   "dependencies": {
-    "react-background-slider": "^2.0.0"
+    "dotenv": "^16.0.0"
   }
 }
