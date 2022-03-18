@@ -1,8 +1,14 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
+
 import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
 
 //Imported pages
 
@@ -14,32 +20,45 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import AddCharity from './pages/AddCharity';
 
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
+
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <ApolloProvider client={client}>
+      <div className="App">
 
-      <Router>
-        <div >
-          <Header />
+        <Navbar />
+
+        <Router>
           <div >
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/charity" component={SingleCharity} />
-              <Route exact path="/add" component={AddCharity} />
-
-              <Route component={NoMatch} />
-            </Switch>
+           {/*} <Header />*/}
+            <div >
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/charity" component={SingleCharity} />
+                <Route exact path= "/add" component={AddCharity} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </Router>
+        </Router>
 
 
-    </div>
+      </div>
+  </ApolloProvider>
   );
 }
 
