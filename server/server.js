@@ -1,8 +1,12 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+
+const uuid = require('uuid/v4');
+const cors = require('cors');
+require('dotenv').config()
 const cors = require('cors')
 const stripe = require('stripe')('pk_live_51KdizXG2yPcwqOdXFoWftK8p5YpZyO6DbflzeDpeWS2zqjiwtjqoka3hHeXFmGHSKlavP7Qs1TFtnPMcqBvVFzYZ00TR0eh0AJ');
-const uuid = require('uuid/v4');
+
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
