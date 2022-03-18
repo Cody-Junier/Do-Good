@@ -6,11 +6,9 @@
   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+.App-logo {
    
   }
-}
 
 .App-header {
   
@@ -18,4 +16,28 @@
 
 .App-link {
   
+}
+
+.Nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #000000;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.NavList {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 1em;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }

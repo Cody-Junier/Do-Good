@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react'
+import logo from '../../../src/images/logo.svg';
 
-class Navbar extends Component {
-    render() {
-        return(
-            <nav className="NavbarItems" class="bg-gray-400 items-center justify-between flex-wrap ">
-               <img src="././logo.svg" class="nav-logo"></img>
-               <ul>
-                   <li class="ml-6"><a href="" class="text-stone-600 hover:text-stone-900">Home</a></li>
-                   <li class="ml-6"><a href="" class="text-stone-600 hover:text-stone-900">Log In</a></li>
-               </ul>
-            
-            
-            </nav>
-        )
-    }
+const Navbar = () => {
+  return (
+    <nav className="Nav-bar" >
+    <img src={logo} />
+    <ul className="NavList"> 
+        <li><a href="" >Home</a></li>
+        <li><a href="" >Log In</a></li>
+    </ul>
+ </nav>
+  )
 }
 
-export default Navbar;
+export default Navbar
