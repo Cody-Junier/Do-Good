@@ -1,5 +1,7 @@
-import React, {useState, useCallback} from 'react';
-import {useDropzone} from 'react-dropzone'
+import React, {useState
+    // , useCallback
+} from 'react';
+// import {useDropzone} from 'react-dropzone'
 import { gql } from '@apollo/client'
 
 // import axios from 'axios';
@@ -11,6 +13,7 @@ export const ADD_CHARITY = gql`
             charityName
             charityDescription
             charityUrl
+            charityImg
             createdAt
             username
         }
@@ -21,22 +24,15 @@ const AddCharity = () => {
     const [charityName, setCharityName] = useState('')
     const [charityDescription, setCharityDescription] = useState('')
     const [charityImage, setCharityImage] = useState('')
-    
-    const onDrop = useCallback(acceptedFiles => {
-        // Do something with the files
-      }, [])
-    const {getRootProps, getInputProps} = useDropzone({onDrop})
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try{
+
             console.log({charityName, charityImage, charityDescription})
-            console.log(charityName)
             setCharityName('')
-            console.log(charityDescription)
             setCharityDescription('')
-            console.log(charityImage)
             setCharityImage('')
         } catch (e) {
             console.log('there was an error')
@@ -60,9 +56,27 @@ const AddCharity = () => {
           id='charityDescription'
           onChange={e => setCharityDescription(e.target.value)}
         ></textarea>
-        <div {...getRootProps()}>
-      <input {...getInputProps()} accept="image/*" onChange={e => setCharityImage(e.target.files[0])} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        
+            <div>
+      <h1>Upload an Image for your Charity!</h1>
+      {charityImage && (
+        <div>
+        <img alt="not fount" width={"250px"} src={URL.createObjectURL(charityImage)} />
+        <br />
+        <button onClick={()=>setCharityImage(null)}>Remove</button>
+        </div>
+      )}
+      <br />
+     
+      <br /> 
+      <input
+        type="file"
+        name="myImage"
+        onChange={(event) => {
+          console.log(event.target.files[0]);
+          setCharityImage(event.target.files[0]);
+        }}
+      />
     </div>
         <button >Submit</button>
         </form>
