@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 
+// add authenticaion to user model
 const userSchema = new Schema(
     {
         username:{
