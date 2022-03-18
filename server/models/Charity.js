@@ -4,7 +4,6 @@ const dateFormat = require('../utils/dateFormat');
 
 const charitySchema = new Schema(
     {
-        // pending: will want an image, need to research implementation
         charityName: {
             type: String,
             require: "You must give the Charity a name"
@@ -14,7 +13,7 @@ const charitySchema = new Schema(
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
-        description:{
+        charityDescription:{
             type: String,
             require: 'Please tell us about this Charity.',
             minlength: 20,
@@ -24,7 +23,7 @@ const charitySchema = new Schema(
             type: String,
             require: true
         },
-        imageUrl:{
+        charityImg:{
             type: String,
             require: true
         },

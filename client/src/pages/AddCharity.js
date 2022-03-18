@@ -7,8 +7,8 @@ import { gql } from '@apollo/client'
 import Axios from 'axios';
 // import { gql, graphql } from 'react-apollo';
 export const ADD_CHARITY = gql`
-    mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!){
-        addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl){
+    mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!){
+        addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
             _id
             charityName
             charityDescription
