@@ -9,7 +9,7 @@ const Signup = () => {
 
   return (
     <main >
-      
+      <h2>SignUp Page</h2>
     </main>
   );
 };

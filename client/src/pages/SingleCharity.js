@@ -6,7 +6,7 @@ const SingleCharity = () => {
 
   return (
     <div>
-   
+      <h2>Single Charity Page</h2>
     </div>
   );
 };

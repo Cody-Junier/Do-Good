@@ -19,6 +19,7 @@ import NoMatch from './pages/NoMatch';
 import SingleCharity from './pages/SingleCharity';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import AddCharity from './pages/AddCharity';
 
 
 const httpLink = createHttpLink({
@@ -48,7 +49,7 @@ function App() {
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/charity" component={SingleCharity} />
-
+                <Route exact path= "/add" component={AddCharity} />
                 <Route component={NoMatch} />
               </Switch>
             </div>
