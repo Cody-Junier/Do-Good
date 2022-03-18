@@ -2,13 +2,12 @@
   
 }
 
-.App-logo {
-  
+img.App-logo {
+  filter: drop-shadow(0 0 0.75rem black);
+  height: 64px;
+  width: 128px;
 }
 
-.App-logo {
-   
-  }
 
 .App-header {
   
@@ -40,4 +39,5 @@
   font-size: 1em;
   text-decoration: none;
   letter-spacing: 0.5px;
+  margin-right: 40px ;
 }

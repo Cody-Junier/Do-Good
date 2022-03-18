@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Cody-Junier/Do-Good/issues"
   },
-  "homepage": "https://github.com/Cody-Junier/Do-Good#readme"
+  "homepage": "https://github.com/Cody-Junier/Do-Good#readme",
+  "dependencies": {
+    "react-background-slider": "^2.0.0"
+  }
 }
