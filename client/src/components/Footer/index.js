@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
 
+const API_KEY = process.env.REACT_APP_API_KEY
 toast.configure();
 
 const Footer = () => {
@@ -30,7 +31,7 @@ const Footer = () => {
     <footer className="w-100 mt-auto bg-secondary p-4">
       <div className='container'>
             <StripeCheckout
-              stripeKey='pk_live_51KdizXG2yPcwqOdXFoWftK8p5YpZyO6DbflzeDpeWS2zqjiwtjqoka3hHeXFmGHSKlavP7Qs1TFtnPMcqBvVFzYZ00TR0eh0AJ'
+              stripeKey={process.env.REACT_APP_API_KEY}
               token={handleToken}
               name="Charity Donate"
               label='Donate'
