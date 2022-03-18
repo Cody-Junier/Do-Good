@@ -80,9 +80,6 @@ const CharityList = () => {
         </p>
       </div>
       </main>
-
-
-
     </section>
   );
 };
