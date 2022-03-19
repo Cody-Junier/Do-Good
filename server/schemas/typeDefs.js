@@ -13,8 +13,10 @@ const typeDefs = gql`
     _id: ID
     createdAt: String
     username: String
-    url: String
-    description: String
+    charityUrl: String
+    charityDescription: String
+    charityImg: String
+    charityName: String
   }
   type User {
     _id: ID
@@ -26,13 +28,13 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    charities(username: String!): [Charity]
+    allCharities: [Charity]
     charity(_id: ID!): Charity
   }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addCharity: Charity
+    addCharity(charityName: String!, charityDescription: String!, charityUrl: String!, charityImg: String!): Charity
   }
   type Auth {
     token: ID!
