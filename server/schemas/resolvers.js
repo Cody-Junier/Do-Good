@@ -52,6 +52,7 @@ const resolvers = {
       },
     //   Have to remove image for now, must learn how to implement it later
       addCharity: async (parent , args, context) => {
+        console.log(context.user)
         if (context.user) {
             // removed ...image in create
           const charity = await Charity.create(args);

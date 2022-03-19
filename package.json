@@ -24,8 +24,5 @@
   "bugs": {
     "url": "https://github.com/Cody-Junier/Do-Good/issues"
   },
-  "homepage": "https://github.com/Cody-Junier/Do-Good#readme",
-  "dependencies": {
-    "dotenv": "^16.0.0"
-  }
+  "homepage": "https://github.com/Cody-Junier/Do-Good#readme"
 }

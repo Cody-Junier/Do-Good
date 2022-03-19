@@ -30,10 +30,10 @@ const AddCharity = () => {
 
         const formData = new FormData()
         formData.append("file", charityImage)
-        formData.append("upload_preset", "ictn1tnv")
+        formData.append("upload_preset", process.env.REACT_APP_UPLOAD_PRESET)
 
         Axios.post(
-            `https://api.cloudinary.com/v1_1/dwgja4bfo/image/upload`,
+            `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
             formData).then((response) => {
                 console.log(response.data.url)
                 setCharityImage(response.data.url)
