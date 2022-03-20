@@ -22,13 +22,15 @@ db.once('open', async () => {
 
   // create Charities
   let createdCharities = [];
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 10; i += 1) {
     const charityDescription = faker.lorem.words(Math.round(Math.random() * 20) + 1);
-
+    const charityName = "Charity" + " " +[i]
+    const charityUrl = 'https://www.redcross.org/'
+    const charityImg = "https://res.cloudinary.com/dwgja4bfo/image/upload/v1647713478/t7qqcwme1euzbfv6w7ge.jpg"
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-    const createdCharity = await Charity.create({ charityDescription, username });
+    const createdCharity = await Charity.create({ charityDescription, username, charityName, charityUrl, charityImg });
 
     const updatedUser = await User.updateOne(
       { _id: userId },
