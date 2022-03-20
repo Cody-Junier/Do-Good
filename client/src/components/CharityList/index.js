@@ -2,19 +2,19 @@ import React from 'react';
 // Link not used yet
 import { Link } from 'react-router-dom';
 
-const CharityList = () => {
+//const CharityList = () => {
 
-  /*const CharityList = ({ charity, title }) => {
+  const CharityList = ({ charity, title }) => {
     if (!charity.length) {
       return <h3>No Charity's Yet</h3>;
-    }*/
+    }
 
   //add images and link for the charity  add real charity links
 
   return (
     <section>
 
-      {/* This is query data to be passed after queries are set up into the cards
+      {/* This is query data to be passed after queries are set up into the cards*/}
 
       <div>
       <h3>{title}</h3>
@@ -34,13 +34,13 @@ const CharityList = () => {
           </div>
         ))}
     </div>
-    */}
+    
 
 
 
 
 
-      {/*Hardcoded card*/}
+      {/*Hardcoded card
       
       <main>
         <h1>This is The Charity Header</h1>
@@ -79,7 +79,8 @@ const CharityList = () => {
           <Link to={`/charity`}>LINK TO SINGLE CHARITY</Link>
         </p>
       </div>
-      </main>
+      </main>*/}
+      
     </section>
   );
 };

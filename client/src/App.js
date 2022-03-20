@@ -5,7 +5,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 
 import './App.css';
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+//import Header from './components/Header';
 import Footer from './components/Footer';
 
 
@@ -23,7 +23,7 @@ import AddCharity from './pages/AddCharity';
 
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: '/graphql',
 });
 
 const client = new ApolloClient({
