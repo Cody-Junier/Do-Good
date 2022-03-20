@@ -6,16 +6,16 @@ import CharityList from '../components/CharityList';
 // import Auth from '../utils/auth';
 
 import { useQuery } from '@apollo/client';
-import { QUERY_CHARITYS } from '../utils/queries';
+import { QUERY_CHARITIES } from '../utils/queries';
 
 
 
 const Home = () => {
 
  
-  const { loading, data } = useQuery(QUERY_CHARITYS);
-  const charitys = data?.charitys || [];
-  console.log(charitys);
+  const { loading, data } = useQuery(QUERY_CHARITIES);
+  const charities = data?.charities || [];
+  console.log(charities);
 
   // add this once logged in features are in place
   // const loggedIn = Auth.loggedIn();*/
@@ -27,7 +27,7 @@ const Home = () => {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <CharityList charitys={charitys} title="Some Charitys" />
+        <CharityList charities={charities} title="Some Charitys" />
       )}
     </div>
 

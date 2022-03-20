@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
   const CharityList = ({ charity, title }) => {
     if (!charity.length) {
-      return <h3>No Charity's Yet</h3>;
+      return <h3>No Charities Yet</h3>;
     }
 
   //add images and link for the charity  add real charity links

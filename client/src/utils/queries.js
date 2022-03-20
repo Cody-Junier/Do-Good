@@ -1,15 +1,16 @@
 import { gql } from '@apollo/client';
 
 
-export const QUERY_CHARITYS = gql`
+export const QUERY_CHARITIES = gql`
   query charitys($username: String) {
     charitys(username: $username) {
       _id
-      charityName:
+      charityName
+      charityDescription
+      charityUrl
+      charityImg
       createdAt
       username
-      description
-      imageUrl:
     }
   }
 `;
@@ -18,11 +19,12 @@ export const QUERY_CHARITY = gql`
   query charity($id: ID!) {
     charity(_id: $id) {
       _id
-      charityName:
+      charityName
+      charityDescription
+      charityUrl
+      charityImg
       createdAt
       username
-      description
-      imageUrl:
     }
   }
 `;

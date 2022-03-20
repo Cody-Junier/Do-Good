@@ -28,11 +28,12 @@ export const ADD_CHARITY = gql`
   mutation addCharity($charityText: String!) {
     addCharity(charityText: $charityText) {
         _id
-        charityName:
+        charityName
+        charityDescription
+        charityUrl
+        charityImg
         createdAt
         username
-        description
-        imageUrl:
       }
     }
   }
