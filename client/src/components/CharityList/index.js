@@ -1,6 +1,19 @@
 import React from 'react';
 // Link not used yet
 import { Link } from 'react-router-dom';
+// import { useState, useEffect } from 'react';
+
+// export default function HeroCarousel() {
+//   const [focusedHero, setFocusedHero] = useState(0);
+//   useEffect(() => {
+//     setInterval(() => {
+//       setFocusedHero(focusedHero > 2 ? 0 : focusedHero + 1)
+//     }, 5000)
+//   }, [])
+//   <img src={require("../../../src/images/charity1.jpg")} className={focusedHero === 0 ? 'focused' : ''} />
+//   <img src={require("../../../src/images/charity2.jpg")}  className={focusedHero === 1 ? 'focused' : ''} />
+//   <img src={require("../../../src/images/charity3.jpg")}  className={focusedHero === 2 ? 'focused' : ''} />  
+// }
 
 const CharityList = () => {
 
@@ -40,8 +53,8 @@ const CharityList = () => {
 
       {/*Hardcoded card*/}
       <main>
-        <h1>This is The Charity Header</h1>
-      <div>
+        <img src={require("../../../src/images/charity3.jpg")} className="Images"></img>
+      <div className="Forum-box">
         <h3>We help the eldery charity</h3>
         <p>This charity helps old folks because jknsaknckjkjdsnk dcsscsd cd d cds cd c ds ds  cd cd
           c scd cd cd sd c c scd cd cdcd  ds cs c dc ssd c c ss dd c ds cds sd sdc  sd ds ds cs  csscdcssd 
@@ -52,7 +65,7 @@ const CharityList = () => {
         </p>
       </div>
 
-      <div>
+      <div className="Forum-box">
         <h3>We help the youth of America charity</h3>
         <p>This charity helps youth because jknsaknckjkjdsnk dcsscsd cd d cds cd c ds ds  cd cd
           c scd cd cd sd c c scd cd cdcd  ds cs c dc ssd c c ss dd c ds cds sd sdc  sd ds ds cs  csscdcssd 
@@ -63,7 +76,7 @@ const CharityList = () => {
         </p>
       </div>
 
-      <div>
+      <div className="Forum-box">
         <h3>We help the everbody charity</h3>
         <p>This charity helps everybody because jknsaknckjkjdsnk dcsscsd cd d cds cd c ds ds  cd cd
           c scd cd cd sd c c scd cd cdcd  ds cs c dc ssd c c ss dd c ds cds sd sdc  sd ds ds cs  csscdcssd 
