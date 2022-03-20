@@ -25,7 +25,8 @@ img.App-logo {
   overflow: hidden;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 40px;
+  margin-bottom: 20px;
 }
 
 .NavList {
@@ -48,4 +49,57 @@ img.App-logo {
   padding: 10px;
   box-shadow: 5px 8px 8px #B8B8B8;
   margin: 60px;
+}
+
+.login-page {
+/* background-image: url(../../../../src/images/background1.jpg); */
+}
+
+.log-wrapper {
+  width: 380px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding-top: 40px;
+  margin-bottom: 80px;
+}
+
+.log-wrapper .title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 70px;
+  color: #B8B8B8;
+  border-radius: 5px 5px 0 0;
+}
+
+.log-wrapper form {
+  padding: 10px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log-wrapper form .field {
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field input {
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding: 8px 16px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.log-wrapper a {
+  text-decoration: none;
 }

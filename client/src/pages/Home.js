@@ -23,6 +23,7 @@ const Home = () => {
   return (
     <main>
       <div >
+        {/* <Carousel/> */}
       <CharityList/>
       {/* not used yet   <CharityForm/>     */}
 
