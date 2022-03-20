@@ -4,11 +4,11 @@ import React, {useState
 // import {useDropzone} from 'react-dropzone'
 import { gql } from '@apollo/client'
 
-// import axios from 'axios';
+import Axios from 'axios';
 // import { gql, graphql } from 'react-apollo';
 export const ADD_CHARITY = gql`
-    mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!){
-        addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl){
+    mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!){
+        addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
             _id
             charityName
             charityDescription
@@ -28,6 +28,17 @@ const AddCharity = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
+        const formData = new FormData()
+        formData.append("file", charityImage)
+        formData.append("upload_preset", "ictn1tnv")
+
+        Axios.post(
+            `https://api.cloudinary.com/v1_1/dwgja4bfo/image/upload`,
+            formData).then((response) => {
+                console.log(response.data.url)
+                setCharityImage(response.data.url)
+            })
+        
         try{
 
             console.log({charityName, charityImage, charityDescription})
@@ -73,7 +84,7 @@ const AddCharity = () => {
         type="file"
         name="myImage"
         onChange={(event) => {
-          console.log(event.target.files[0]);
+        //   console.log(event.target.files[0]);
           setCharityImage(event.target.files[0]);
         }}
       />

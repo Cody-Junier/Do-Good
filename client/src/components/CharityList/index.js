@@ -54,6 +54,7 @@ import { Link } from 'react-router-dom';
         <p>
           <Link to={`/charity`}>LINK TO SINGLE CHARITY</Link>
         </p>
+        <img src="https://i.stack.imgur.com/34AD2.jpg" />
       </div>
 
       <div>
