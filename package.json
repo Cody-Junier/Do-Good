@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/Cody-Junier/Do-Good#readme",
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "pure-react-carousel": "^1.28.1",
+    "react-images-carousel": "^2.1.1"
   }
 }
