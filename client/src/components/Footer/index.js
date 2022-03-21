@@ -28,7 +28,7 @@ const Footer = () => {
     }
   }
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
+    <footer className="footer">
       <div className='container'>
             <StripeCheckout
               stripeKey={process.env.REACT_APP_API_KEY}

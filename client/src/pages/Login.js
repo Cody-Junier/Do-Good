@@ -2,7 +2,7 @@ import React
 // add this once state is needed
 // ,  { useState } 
  from 'react';
-//  import background from "../../../src/images/background1.jpg";
+
 
 
 const Login = () => {
@@ -10,9 +10,8 @@ const Login = () => {
   
 
   return (
-    // <div  styles={{ backgroundImage:`url(${background})` }}>
-    // </div>
-    <main className='login-page'>
+   
+    <body className='login-page'>
     <div className="log-wrapper">
     <div className="title">
       Welcome Back!
@@ -36,7 +35,7 @@ const Login = () => {
       </p>
     </form>
   </div>
-  </main>
+  </body>
   );
 };
 

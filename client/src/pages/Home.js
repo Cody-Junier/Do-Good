@@ -1,5 +1,6 @@
 import React from 'react';
 import CharityList from '../components/CharityList';
+import Carousel from '../components/Carousel';
 //import CharityForm from '../components/CharityForm';
 
 // add this once logged in features are in place
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <main>
       <div >
-        {/* <Carousel/> */}
+        <Carousel/>
       <CharityList/>
       {/* not used yet   <CharityForm/>     */}
 

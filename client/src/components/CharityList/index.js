@@ -2,6 +2,7 @@ import React from 'react';
 // Link not used yet
 import { Link } from 'react-router-dom';
 
+// const UserImage = require("../../images/.svg")
 
 
 
@@ -58,9 +59,8 @@ const CharityList = () => {
 
       {/*Hardcoded card*/}
       <main>
-        <img src={require("../../../src/images/charity3.jpg")} alt="hero"></img>
       <div className="Forum-box">
-      <img src={require("../../../src/images/user-ph.svg")} alt="user-ph"></img>
+      <img src='' alt="user-ph"></img>
         <h3>We help the eldery charity</h3>
         <p>This charity helps old folks because jknsaknckjkjdsnk dcsscsd cd d cds cd c ds ds  cd cd
           c scd cd cd sd c c scd cd cdcd  ds cs c dc ssd c c ss dd c ds cds sd sdc  sd ds ds cs  csscdcssd 
