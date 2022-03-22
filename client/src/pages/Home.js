@@ -26,6 +26,7 @@ const Home = () => {
       <div >
         <Carousel/>
       <CharityList/>
+      <Navbar/>
       {/* not used yet   <CharityForm/>     */}
 
       </div>

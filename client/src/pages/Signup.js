@@ -4,14 +4,14 @@ import React
  from 'react';
 
 
-// const Signup = () => {
+const Signup = () => {
   
 
-//   return (
+  return (
 //     <div class="log-wrapper">
-//   <div class="title">
-//     Start doing good!
-//   </div>
+  <div class="title">
+    Start doing good!
+  </div>
 //   <form autocomplete="none" id="signup-form" class="login-form">
 //     <div class="field">
 //     <input autocomplete="off" type="email" id="email" placeholder="Email Address">
@@ -32,7 +32,7 @@ import React
 //     </p>
 //   </form>
 // </div>
-//   );
-// };
+  );
+};
 
-// export default Signup;
+export default Signup
