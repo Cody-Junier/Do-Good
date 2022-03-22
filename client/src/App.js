@@ -25,6 +25,25 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import AddCharity from './pages/AddCharity';
 
+// import Login from './Login';
+
+// const App = () => {
+//   return (
+//     <div className="">
+//       <Navbar />
+//       <div className="">
+//         <Routes>
+//           <Route path="/" element={<LinkList/>} />
+//           <Route
+//             path="/create"
+//             element={<CreateLink/>}
+//           />
+//           <Route path="/login" element={<Login/>} />
+//         </Routes>
+//       </div>
+//     </div>
+//   );
+// };
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
