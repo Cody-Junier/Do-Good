@@ -37,18 +37,19 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      password:
+      password
       charities {
         _id
-      charityName:
+      charityName
       createdAt
       username
       description
-      imageUrl:
+      imageUrl
       }
     }
   }
 `;
+
 
 
 

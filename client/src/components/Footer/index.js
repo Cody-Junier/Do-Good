@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
 
-const API_KEY = process.env.REACT_APP_API_KEY
+const stripeKey = process.env.REACT_APP_API_KEY
 toast.configure();
 
 const Footer = () => {
