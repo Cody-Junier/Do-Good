@@ -6,16 +6,17 @@ import Carousel from '../components/Carousel';
 // add this once logged in features are in place
 // import Auth from '../utils/auth';
 
-/*import { useQuery } from '@apollo/client';
-import { QUERY_Charitys } from '../utils/queries';*/
+import { useQuery } from '@apollo/client';
+import { QUERY_CHARITIES } from '../utils/queries';
 
 
 
 const Home = () => {
 
- /*
-  const { loading, data } = useQuery(QUERY_Charitys);
-  const charitys = data?.charitys || [];
+ 
+  const { loading, data } = useQuery(QUERY_CHARITIES);
+  const charities = data?.charities || [];
+  console.log(charities);
 
   // add this once logged in features are in place
   // const loggedIn = Auth.loggedIn();*/
@@ -23,13 +24,13 @@ const Home = () => {
 
   return (
     <main>
-      <div >
-        <Carousel/>
-      <CharityList/>
-      <Navbar/>
-      {/* not used yet   <CharityForm/>     */}
-
-      </div>
+       <div >
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <CharityList charities={charities} title="Some Charitys" />
+      )}
+    </div>
 
     </main>
   );

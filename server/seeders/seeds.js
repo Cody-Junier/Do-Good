@@ -19,4 +19,27 @@ db.once('open', async () => {
   }
 
   const createdUsers = await User.collection.insertMany(userData);
+
+  // create Charities
+  let createdCharities = [];
+  for (let i = 0; i < 10; i += 1) {
+    const charityDescription = "This is a charity description for my Charity.";
+    const charityName = "Charity" + " " +[i]
+    const charityUrl = 'https://www.redcross.org/'
+    const charityImg = "https://res.cloudinary.com/dwgja4bfo/image/upload/v1647713478/t7qqcwme1euzbfv6w7ge.jpg"
+    const randomUserIndex = Math.floor(Math.random() * createdUsers[i]);
+    const { username, _id: userId } = createdUsers
+
+    const createdCharity = await Charity.create({ charityDescription, username, charityName, charityUrl, charityImg });
+
+    const updatedUser = await User.updateOne(
+      { _id: userId },
+      { $push: { charities: createdCharity._id } }
+    );
+
+    createdCharities.push(createdCharity);
+  }
+
+  console.log('all done');
+  process.exit(0);
 });
