@@ -24,6 +24,7 @@ const Home = () => {
 
   return (
     <main>
+      <Carousel/>
        <div >
       {loading ? (
         <div>Loading...</div>

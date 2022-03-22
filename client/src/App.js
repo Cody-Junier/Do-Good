@@ -1,4 +1,4 @@
-import logo from './images/logo.svg';
+// import logo from './images/logo.svg';
 // import { ReactComponent as Logo } from './logo.svg';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -86,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
