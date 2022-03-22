@@ -37,7 +37,6 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      password
       charities {
         _id
       charityName

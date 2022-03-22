@@ -13,9 +13,9 @@ import { QUERY_CHARITIES } from '../utils/queries';
 const Home = () => {
 
  
-  const { loading, data } = useQuery(QUERY_CHARITIES);
-  const charities = data?.charities || [];
-  console.log(charities);
+  // const { loading, data } = useQuery(QUERY_CHARITIES);
+  // const charities = data?.charities || [];
+  // console.log(charities);
 
   // add this once logged in features are in place
   // const loggedIn = Auth.loggedIn();*/
@@ -24,11 +24,12 @@ const Home = () => {
   return (
     <main>
        <div >
-      {loading ? (
+         hi
+      {/* {loading ? (
         <div>Loading...</div>
       ) : (
         <CharityList charities={charities} title="Some Charitys" />
-      )}
+      )} */}
     </div>
 
     </main>
