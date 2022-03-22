@@ -54,7 +54,7 @@ const resolvers = {
       addCharity: async (parent , args, context) => {
         if (context.user) {
             // removed ...image in create
-          const charity = await Charity.create(args);
+          const charity = await Charity.create({ ...args, username: context.user.username});
       
           await User.findByIdAndUpdate(
             { _id: context.user._id },
