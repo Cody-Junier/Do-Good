@@ -1,12 +1,12 @@
 import React from 'react';
-import CharityList from '../components/CharityList';
-//import CharityForm from '../components/CharityForm';
+// import CharityList from '../components/CharityList';
+// //import CharityForm from '../components/CharityForm';
 
-// add this once logged in features are in place
-// import Auth from '../utils/auth';
+// // add this once logged in features are in place
+// // import Auth from '../utils/auth';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_CHARITIES } from '../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_CHARITIES } from '../utils/queries';
 
 
 
