@@ -1,20 +1,21 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
+      username
+      email
+      _id
     }
   }
+}
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!){
+    addUser(username: $username, email: $email, password: $password){
       token
       user {
         _id
@@ -25,17 +26,15 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_CHARITY = gql`
-  mutation addCharity($charityText: String!) {
-    addCharity(charityText: $charityText) {
-        _id
-        charityName
-        charityDescription
-        charityUrl
-        charityImg
-        createdAt
-        username
-      }
-    }
+mutation AddCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!) {
+  addCharity (charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
+    charityUrl
+    charityDescription
+    charityImg
+    createdAt
+    _id
+    username
   }
+}
 `;
 

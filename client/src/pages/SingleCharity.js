@@ -1,10 +1,10 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 
-//import Auth from '../utils/auth';
-import { useQuery } from '@apollo/client';
-import { QUERY_CHARITY } from '../utils/queries'
+// //import Auth from '../utils/auth';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_CHARITY } from '../utils/queries'
 
 
 const SingleCharity = (props) => {

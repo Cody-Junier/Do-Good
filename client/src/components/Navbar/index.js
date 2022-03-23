@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 class Navbar extends Component {
     render() {
         return(
-            <nav className="NavbarItems" class="bg-gray-400 items-center justify-between flex-wrap ">
-               
+            <nav className="NavbarItems">
+               <img src="././logo.svg" alt="do good logo"></img>
                <ul>
-                   <li className="ml-6"><a href="" class="text-stone-600 hover:text-stone-900">Home</a></li>
-                   <li className="ml-6"><a href="" class="text-stone-600 hover:text-stone-900">Log In</a></li>
+                   <li><a href="/" class="text-stone-600 hover:text-stone-900">Home</a></li>
+                   <li><a href="/" >Log In</a></li>
                </ul>
             
             
