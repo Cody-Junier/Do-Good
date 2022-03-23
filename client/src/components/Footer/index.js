@@ -31,7 +31,7 @@ const Footer = () => {
     <footer className="w-100 mt-auto bg-secondary p-4">
       <div className='container'>
             <StripeCheckout
-              stripeKey={process.env.REACT_APP_API_KEY}
+              stripeKey={process.env.REACT_APP_STRIPE_KEY}
               token={handleToken}
               name="Charity Donate"
               label='Donate'
