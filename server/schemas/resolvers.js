@@ -4,7 +4,7 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-      allCharities: async () => {
+      charities: async () => {
         return Charity.find().sort({ createdAt: -1 });
       },
       charity: async (parent, args, context) => {

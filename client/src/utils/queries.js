@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_CHARITIES = gql`
-  query charitys($username: String) {
-    charitys(username: $username) {
+  query charities($username: String) {
+    charities(username: $username) {
       _id
       charityName
       charityDescription
@@ -44,6 +44,39 @@ export const QUERY_USER = gql`
       username
       description
       imageUrl
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      charities {
+        _id
+        username
+        createdAt
+        charityUrl
+        charityDescription
+        charityImg
+        charityName
+      }
+    }
+  }
+`;
+
+export const QUERY_ME_BASIC = gql`
+  {
+    me {
+      _id
+      username
+      email
+      charities {
+        _id
+        username
       }
     }
   }

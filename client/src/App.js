@@ -56,7 +56,9 @@ function App() {
             <div >
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/profile/:username?" component={Profile} />
                 <Route exact path="/charity" component={SingleCharity} />
                 <Route exact path= "/add" component={AddCharity} />
                 <Route component={NoMatch} />
