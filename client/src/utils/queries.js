@@ -2,8 +2,7 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_CHARITIES = gql`
-  query charities($username: String) {
-    charities(username: $username) {
+  query charities{
       _id
       charityName
       charityDescription
@@ -11,7 +10,7 @@ export const QUERY_CHARITIES = gql`
       charityImg
       createdAt
       username
-    }
+    
   }
 `;
 
@@ -81,7 +80,4 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
-
-
-
 

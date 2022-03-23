@@ -1,6 +1,6 @@
 import React from 'react';
 import CharityList from '../components/CharityList';
-import CharityForm from '../components/CharityForm';
+// import CharityForm from '../components/CharityForm';
 
 // // add this once logged in features are in place
 import Auth from '../utils/auth';
@@ -24,11 +24,11 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-space-between">
-        {loggedIn && (
+        {/* {loggedIn && (
           <div className="col-12 mb-3">
             <CharityForm />
           </div>
-        )}
+        )} */}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>

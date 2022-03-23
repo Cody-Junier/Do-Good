@@ -1,48 +1,57 @@
 import React, {useState
     // , useCallback
 } from 'react';
-// import {useDropzone} from 'react-dropzone'
-import { gql } from '@apollo/client'
-
+import { useMutation
+    // , useQuery
+ } from '@apollo/client'
+import Auth from '../utils/auth';
+import { ADD_CHARITY } from '../utils/mutations';
 import Axios from 'axios';
 // import { gql, graphql } from 'react-apollo';
-export const ADD_CHARITY = gql`
-    mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!){
-        addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
-            _id
-            charityName
-            charityDescription
-            charityUrl
-            charityImg
-            createdAt
-            username
-        }
-    }
-`;
+// import { QUERY_CHARITIES, QUERY_ME_BASIC } from '../utils/queries';
+
 
 const AddCharity = () => {
+    
     const [charityName, setCharityName] = useState('')
+    const [charityUrl, setCharityUrl] = useState('')
     const [charityDescription, setCharityDescription] = useState('')
     const [charityImage, setCharityImage] = useState('')
+    // const { loading, data} = useQuery(QUERY_CHARITIES)
+    // const { data: userData} = useQuery(QUERY_ME_BASIC)
+    // const username={userData.me.username}
 
+    const [createCharity, { error }]= useMutation(ADD_CHARITY)
+    
+   const imageSubmit = async(event) => {
+       event.preventDefault()
+       console.log(event.target.files[0])
+       const formData = new FormData()
+       formData.append("file", event.target.files[0])
+       formData.append("upload_preset", "ictn1tnv")
+       
+       Axios.post(
+           `https://api.cloudinary.com/v1_1/dwgja4bfo/image/upload`,
+           formData).then((response) => {
+               console.log(response.data.url)
+               setCharityImage(response.data.url)
+               console.log(charityImage)
+            })
+        }
+            
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
-        const formData = new FormData()
-        formData.append("file", charityImage)
-        formData.append("upload_preset", "ictn1tnv")
-
-        Axios.post(
-            `https://api.cloudinary.com/v1_1/dwgja4bfo/image/upload`,
-            formData).then((response) => {
-                console.log(response.data.url)
-                setCharityImage(response.data.url)
-            })
+        const token = Auth.loggedIn()? Auth.getToken(): null
+        console.log(token)
         
+        console.log({charityName, charityDescription, charityUrl, charityImage})
         try{
-
-            console.log({charityName, charityImage, charityDescription})
+            const{data} = await createCharity({
+                variables: {charityName: charityName, charityDescription: charityDescription, charityUrl: charityUrl, charityImage: charityImage }
+            })
+            console.log(data)
             setCharityName('')
+            setCharityUrl('')
             setCharityDescription('')
             setCharityImage('')
         } catch (e) {
@@ -51,28 +60,24 @@ const AddCharity = () => {
           }
     }
     return (
-        <main>
-            <h2>Hello</h2>
-        <form onSubmit={handleFormSubmit}>
-        <input className='form-input'
-                placeholder="Charities' Name"
-                value={charityName}
-                id='charityName'
-                onChange={e => setCharityName(e.target.value)}
-              />
-        <textarea
-          placeholder="Tell us about this Charity!"
-          className="charity-description"
-          value={charityDescription}
-          id='charityDescription'
-          onChange={e => setCharityDescription(e.target.value)}
-        ></textarea>
         
+        <main>
+            {/* {loggedIn && userData ? ( */}
+                <>
+            <div>
+              
+                {/* <h2>
+                    {userData.me.username}
+                    </h2> */}
+              
+              </div>
+
+      <form>
             <div>
       <h1>Upload an Image for your Charity!</h1>
       {charityImage && (
         <div>
-        <img alt="not fount" width={"250px"} src={URL.createObjectURL(charityImage)} />
+        <img alt="not found" width={"250px"} src={charityImage} />
         <br />
         <button onClick={()=>setCharityImage(null)}>Remove</button>
         </div>
@@ -85,12 +90,40 @@ const AddCharity = () => {
         name="myImage"
         onChange={(event) => {
         //   console.log(event.target.files[0]);
-          setCharityImage(event.target.files[0]);
+          imageSubmit(event);
         }}
       />
     </div>
+    </form>
+
+            <h2>Hello</h2>
+        <form onSubmit={e =>handleFormSubmit(e)}>
+        <input className='form-input'
+                placeholder="Charities' Name"
+                value={charityName}
+                id='charityName'
+                onChange={e => setCharityName(e.target.value)}
+              />
+        <input className='form-input'
+                placeholder="Charities' URL"
+                value={charityUrl}
+                id='charityUrl'
+                onChange={e => setCharityUrl(e.target.value)}
+              />
+        <textarea
+          placeholder="Tell us about this Charity!"
+          className="charity-description"
+          value={charityDescription}
+          id='charityDescription'
+          onChange={e => setCharityDescription(e.target.value)}
+        ></textarea>
+        
+    {error && <span>Something went wrong...</span>}
         <button >Submit</button>
         </form>
+        </>
+
+        {/* ) : <h2>Please Log in to add a Charity</h2>} */}
         </main>
     );
     

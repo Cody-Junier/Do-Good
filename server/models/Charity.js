@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose')
 const dateFormat = require('../utils/dateFormat');
-// const imgDefault = "https://i.stack.imgur.com/34AD2.jpg" - see below comment
+// const imgDefault = "https://res.cloudinary.com/dwgja4bfo/image/upload/v1647581662/p792ilbc1udplgjod6kp.jpg"
 
 const charitySchema = new Schema(
     {
@@ -25,7 +25,7 @@ const charitySchema = new Schema(
         },
         charityImg:{
             type: String,
-            require: true
+            require: true,
         },
         username: {
             type: String,
