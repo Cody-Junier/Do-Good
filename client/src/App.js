@@ -5,7 +5,6 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 
 import './App.css';
 import Navbar from './components/Navbar';
-import Carousel from './components/Carousel';
 //import Header from './components/Header';
 import Footer from './components/Footer';
 

@@ -45,7 +45,7 @@ const Login = (props) => {
           <div className="field">
             <input
               className="field"
-              placeholder="Your email"
+              placeholder="Email"
               name="email"
               type="email"
               id="email"
@@ -56,7 +56,7 @@ const Login = (props) => {
           <div className="field">
             <input
               className="field"
-              placeholder="******"
+              placeholder="Password"
               name="password"
               type="password"
               id="password"
@@ -73,7 +73,7 @@ const Login = (props) => {
             </button>
           </div>
           <ul className="error-text"></ul>
-          <p className="log-link">
+          <p>
             Not a member? <a href="/signup">Sign up now!</a>
           </p>
         </form>
