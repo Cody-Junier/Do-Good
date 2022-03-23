@@ -2,10 +2,14 @@ import React, {useState
     // , useCallback
 } from 'react';
 // import {useDropzone} from 'react-dropzone'
-import { gql } from '@apollo/client'
+import { gql, useMutation, useQuery } from '@apollo/client'
+import Auth from '../utils/auth';
 
 import Axios from 'axios';
 // import { gql, graphql } from 'react-apollo';
+import { QUERY_CHARITIES, QUERY_ME_BASIC } from '../utils/queries';
+
+
 export const ADD_CHARITY = gql`
     mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!){
         addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
@@ -20,10 +24,19 @@ export const ADD_CHARITY = gql`
     }
 `;
 
-const AddCharity = () => {
+const AddCharity = (props) => {
+    const loggedIn = Auth.loggedIn()
+
     const [charityName, setCharityName] = useState('')
+    const [charityUrl, setCharityUrl] = useState('')
     const [charityDescription, setCharityDescription] = useState('')
     const [charityImage, setCharityImage] = useState('')
+    const { loading, data} = useQuery(QUERY_CHARITIES)
+    const { data: userData} = useQuery(QUERY_ME_BASIC)
+    // const username={userData.me.username}
+
+    const [addCharity, { error }]= useMutation(ADD_CHARITY)
+
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -40,9 +53,12 @@ const AddCharity = () => {
             })
         
         try{
-
-            console.log({charityName, charityImage, charityDescription})
+            await addCharity({
+                variables: {charityName, charityUrl, charityImage, charityDescription}
+            })
+            console.log({charityName, charityUrl, charityImage, charityDescription})
             setCharityName('')
+            setCharityUrl('')
             setCharityDescription('')
             setCharityImage('')
         } catch (e) {
@@ -51,7 +67,18 @@ const AddCharity = () => {
           }
     }
     return (
+        
         <main>
+            {/* {loggedIn && userData ? ( */}
+                <>
+            <div>
+              
+                {/* <h2>
+                    {userData.me.username}
+                    </h2> */}
+              
+              </div>
+          
             <h2>Hello</h2>
         <form onSubmit={handleFormSubmit}>
         <input className='form-input'
@@ -59,6 +86,12 @@ const AddCharity = () => {
                 value={charityName}
                 id='charityName'
                 onChange={e => setCharityName(e.target.value)}
+              />
+        <input className='form-input'
+                placeholder="Charities' URL"
+                value={charityUrl}
+                id='charityUrl'
+                onChange={e => setCharityUrl(e.target.value)}
               />
         <textarea
           placeholder="Tell us about this Charity!"
@@ -89,8 +122,12 @@ const AddCharity = () => {
         }}
       />
     </div>
+    {error && <span>Something went wrong...</span>}
         <button >Submit</button>
         </form>
+        </>
+
+        {/* ) : <h2>Please Log in to add a Charity</h2>} */}
         </main>
     );
     
