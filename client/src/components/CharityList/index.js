@@ -1,6 +1,6 @@
 import React from 'react';
 // Link not used yet
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 //const CharityList = () => {
 
