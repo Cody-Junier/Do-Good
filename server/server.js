@@ -28,9 +28,9 @@ const startServer = async () => {
 
 startServer()
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(cors());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
+// app.use(cors());
 
 // app.get("/", (req, res) => {
 //   res.send("Add your Stripe Secret Key to the .require('stripe') statement!");

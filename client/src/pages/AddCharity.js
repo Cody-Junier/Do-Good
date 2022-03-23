@@ -47,7 +47,7 @@ const AddCharity = () => {
         console.log({charityName, charityDescription, charityUrl, charityImage})
         try{
             const{data} = await createCharity({
-                variables: {charityName, charityDescription, charityUrl, charityImage }
+                variables: {charityName: charityName, charityDescription: charityDescription, charityUrl: charityUrl, charityImage: charityImage }
             })
             console.log(data)
             setCharityName('')
