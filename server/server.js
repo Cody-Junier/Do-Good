@@ -5,7 +5,7 @@ const path = require('path')
 const uuid = require('uuid/v4');
 const cors = require('cors');
 require('dotenv').config()
-const stripe = require('stripe')('pk_live_51KdizXG2yPcwqOdXFoWftK8p5YpZyO6DbflzeDpeWS2zqjiwtjqoka3hHeXFmGHSKlavP7Qs1TFtnPMcqBvVFzYZ00TR0eh0AJ');
+const stripe = require('stripe')(process.env.REACT_APP_STRIPE_KEY);
 
 
 const { typeDefs, resolvers } = require('./schemas');
