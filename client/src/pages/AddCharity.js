@@ -9,6 +9,7 @@ import Axios from 'axios';
 // import { gql, graphql } from 'react-apollo';
 import { QUERY_CHARITIES, QUERY_ME_BASIC } from '../utils/queries';
 
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiY29keS1qdW5pZXIiLCJlbWFpbCI6ImRvb3RAZ21haWwuY29tIiwiX2lkIjoiNjIzYTgzNzcwNjI5ZTg3NDJlOWFiNjk2In0sImlhdCI6MTY0ODAwNjc3OCwiZXhwIjoxNjQ4MDEzOTc4fQ.l2Ptk-3JiC5581ZyDyInwlhdoEKwPlk9syFYZV9o3HQ"
 
 export const ADD_CHARITY = gql`
     mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!){
@@ -54,7 +55,7 @@ const AddCharity = (props) => {
         
         try{
             await addCharity({
-                variables: {charityName, charityUrl, charityImage, charityDescription}
+                variables: {charityName, charityUrl, charityImage, charityDescription, token}
             })
             console.log({charityName, charityUrl, charityImage, charityDescription})
             setCharityName('')
