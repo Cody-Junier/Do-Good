@@ -15,21 +15,21 @@ import { Link } from 'react-router-dom';
     <div>
       <h3>{title}</h3>
       {charities &&
-        charities.map(charities => (
-          <div key={charities._id} className="card mb-3">
+        charities.map(charity => (
+          <div key={charity._id} className="card mb-3">
             <p className="card-header">
               <Link
-                to={`/profile/${charities.username}`}
+                to={`/profile/${charity.username}`}
                 style={{ fontWeight: 700 }}
                 className="text-light"
               >
-                {charities.username}
+                {charity.username}
               </Link>{' '}
-              charity on {charities.createdAt}
+              charity on {charity.createdAt}
             </p>
             <div className="card-body">
-              <Link to={`/profile/${charities._id}`}>
-                <p>{charities.description}</p>
+              <Link to={`/profile/${charity._id}`}>
+                <p>{charity.description}</p>
               </Link>
             </div>
           </div>
@@ -44,7 +44,7 @@ import { Link } from 'react-router-dom';
 
 
 
-      {/*Hardcoded card
+      /*Hardcoded card
       
       <main>
         <h1>This is The Charity Header</h1>
@@ -84,6 +84,6 @@ import { Link } from 'react-router-dom';
           <Link to={`/charity`}>LINK TO SINGLE CHARITY</Link>
         </p>
       </div>
-      </main>*/}
+      </main>*/
 
 

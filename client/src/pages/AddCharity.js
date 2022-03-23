@@ -1,47 +1,33 @@
 import React, {useState
     // , useCallback
 } from 'react';
-// import {useDropzone} from 'react-dropzone'
-import { gql, useMutation, useQuery } from '@apollo/client'
-// import Auth from '../utils/auth';
-
+import { useMutation
+    // , useQuery
+ } from '@apollo/client'
+import Auth from '../utils/auth';
+import { ADD_CHARITY } from '../utils/mutations';
 import Axios from 'axios';
 // import { gql, graphql } from 'react-apollo';
-import { QUERY_CHARITIES, QUERY_ME_BASIC } from '../utils/queries';
+// import { QUERY_CHARITIES, QUERY_ME_BASIC } from '../utils/queries';
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiY29keS1qdW5pZXIiLCJlbWFpbCI6ImRvb3RAZ21haWwuY29tIiwiX2lkIjoiNjIzYTgzNzcwNjI5ZTg3NDJlOWFiNjk2In0sImlhdCI6MTY0ODAwODY4NSwiZXhwIjoxNjQ4MDE1ODg1fQ.Zc92QoWayUxdvQf2VefimiEXlnU_5g6k3Z9GH5O9-Kk"
 
-export const ADD_CHARITY = gql`
-    mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!){
-        addCharity(charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
-            _id
-            charityName
-            charityDescription
-            charityUrl
-            charityImg
-            createdAt
-            username
-        }
-    }
-`;
-
-const AddCharity = (props) => {
-    // const loggedIn = Auth.loggedIn()
-
+const AddCharity = () => {
+    
     const [charityName, setCharityName] = useState('')
     const [charityUrl, setCharityUrl] = useState('')
     const [charityDescription, setCharityDescription] = useState('')
     const [charityImage, setCharityImage] = useState('')
-    const { loading, data} = useQuery(QUERY_CHARITIES)
-    const { data: userData} = useQuery(QUERY_ME_BASIC)
+    // const { loading, data} = useQuery(QUERY_CHARITIES)
+    // const { data: userData} = useQuery(QUERY_ME_BASIC)
     // const username={userData.me.username}
 
-    const [addCharity, { error }]= useMutation(ADD_CHARITY)
-
+    const [createCharity, { error }]= useMutation(ADD_CHARITY)
+    
    const imageSubmit = async(event) => {
        event.preventDefault()
+       console.log(event.target.files[0])
        const formData = new FormData()
-       formData.append("file", charityImage)
+       formData.append("file", event.target.files[0])
        formData.append("upload_preset", "ictn1tnv")
        
        Axios.post(
@@ -55,14 +41,15 @@ const AddCharity = (props) => {
             
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
+        const token = Auth.loggedIn()? Auth.getToken(): null
+        console.log(token)
         
-        console.log({charityName, charityUrl, charityImage, charityDescription})
+        console.log({charityName, charityDescription, charityUrl, charityImage})
         try{
-            await addCharity({
-                variables: {charityName, charityUrl, charityImage, charityDescription, token}
+            const{data} = await createCharity({
+                variables: {charityName, charityDescription, charityUrl, charityImage }
             })
-            console.log({charityName, charityUrl, charityImage, charityDescription})
+            console.log(data)
             setCharityName('')
             setCharityUrl('')
             setCharityDescription('')
@@ -85,15 +72,14 @@ const AddCharity = (props) => {
               
               </div>
 
-      <form onSubmit={imageSubmit}>
+      <form>
             <div>
       <h1>Upload an Image for your Charity!</h1>
       {charityImage && (
         <div>
-        <img alt="not found" width={"250px"} src={URL.createObjectURL(charityImage)} />
+        <img alt="not found" width={"250px"} src={charityImage} />
         <br />
         <button onClick={()=>setCharityImage(null)}>Remove</button>
-        <button>Confirm</button>
         </div>
       )}
       <br />
@@ -104,14 +90,14 @@ const AddCharity = (props) => {
         name="myImage"
         onChange={(event) => {
         //   console.log(event.target.files[0]);
-          setCharityImage(event.target.files[0]);
+          imageSubmit(event);
         }}
       />
     </div>
     </form>
 
             <h2>Hello</h2>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={e =>handleFormSubmit(e)}>
         <input className='form-input'
                 placeholder="Charities' Name"
                 value={charityName}
