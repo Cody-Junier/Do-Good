@@ -26,7 +26,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_CHARITY = gql`
-mutation AddCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!) {
+mutation addCharity($charityName: String!, $charityDescription: String!, $charityUrl: String!, $charityImg: String!) {
   addCharity (charityName: $charityName, charityDescription: $charityDescription, charityUrl: $charityUrl, charityImg: $charityImg){
     charityUrl
     charityDescription
@@ -37,3 +37,4 @@ mutation AddCharity($charityName: String!, $charityDescription: String!, $charit
   }
 }
 `;
+
