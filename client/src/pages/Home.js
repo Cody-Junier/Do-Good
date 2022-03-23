@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Carousel from '../components/Carousel';
 // import CharityList from '../components/CharityList';
 // //import CharityForm from '../components/CharityForm';
 
@@ -23,8 +25,9 @@ const Home = () => {
 
   return (
     <main>
+      <Carousel/>
        <div >
-         hi
+         
       {/* {loading ? (
         <div>Loading...</div>
       ) : (
