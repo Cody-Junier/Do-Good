@@ -8,30 +8,31 @@ import { QUERY_CHARITY } from '../utils/queries'
 
 
 const SingleCharity = (props) => {
-  const { id: charityId } = useParams();
+  // const { id: charityId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_CHARITY, {
-    variables: { id: charityId },
-  });
+  // const { loading, data } = useQuery(QUERY_CHARITY, {
+  //   variables: { id: charityId },
+  // });
 
-  const charity = data?.charity || {};
+  // const charity = data?.charity || {};
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
 
   return (
     <div>
       <div>
         <p>
-          <span >
+          {/* <span >
             {charity.username}
           </span>{' '}
-          charity on {charity.createdAt}
+          charity on {charity.createdAt} */}
         </p>
         <div >
-          <p>{charity.description}</p>
+hi
+          {/* <p>{charity.description}</p> */}
         </div>
       </div>
     </div>
