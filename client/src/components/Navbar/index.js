@@ -8,6 +8,7 @@ class Navbar extends Component {
                <ul>
                    <li><a href="/">Home</a></li>
                    <li><a href="/login" >Log In</a></li>
+                   <li><a href='/add'> Suggest a Charity</a></li>
                </ul>
             
             
