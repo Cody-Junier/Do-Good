@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/do-good',
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/good-charity',
   {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
-    // useCreateIndex: true,
-    // useFindAndModify: false
   }
 );
 

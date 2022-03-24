@@ -15,6 +15,11 @@ const { authMiddleware } = require('./utils/auth');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+var corsOptions = {
+  origin: '/graphql',
+  credentials: true
+}
+
 const startServer = async () => {
   const server = new ApolloServer({
     typeDefs,
@@ -28,9 +33,9 @@ const startServer = async () => {
 
 startServer()
 
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-// app.use(cors());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cors(corsOptions));
 
 // app.get("/", (req, res) => {
 //   res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
