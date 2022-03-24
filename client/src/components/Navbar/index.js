@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><a href="/login" >Get Started</a></li>
     </ul>
  </nav>
-  )
+  )}
 // class Navbar extends Component {
 //     render() {
 //         return(
