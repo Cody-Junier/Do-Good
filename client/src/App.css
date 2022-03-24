@@ -48,6 +48,9 @@ body {
 
  .hero-section {
   background-position: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
  }
 
 .carousel-img {
