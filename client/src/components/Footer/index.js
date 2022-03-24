@@ -8,7 +8,11 @@ import React from 'react';
 // // const API_KEY = process.env.REACT_APP_API_KEY
 // toast.configure();
 
+<<<<<<< HEAD
 // const Footer = () => {
+=======
+const Footer = () => {
+>>>>>>> main
   // const [product] = React.useState({
   //   name: "Donate",
   //   description: "Charity Donate"

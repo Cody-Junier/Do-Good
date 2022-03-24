@@ -4,7 +4,7 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-      allCharities: async () => {
+      charities: async () => {
         return Charity.find().sort({ createdAt: -1 });
       },
       charity: async (parent, args, context) => {
@@ -35,6 +35,7 @@ const resolvers = {
         return { token, user };
       },
       login: async (parent, { email, password }) => {
+        console.log('login')
         const user = await User.findOne({ email });
       
         if (!user) {
@@ -50,15 +51,14 @@ const resolvers = {
         const token = signToken(user);
         return { token, user };
       },
-    //   Have to remove image for now, must learn how to implement it later
       addCharity: async (parent , args, context) => {
+        console.log("add charity")
+        console.log(context)
         if (context.user) {
-            // removed ...image in create
           const charity = await Charity.create({ ...args, username: context.user.username});
       
           await User.findByIdAndUpdate(
             { _id: context.user._id },
-            // removed image before username:
             { $push: { charities: charity.id } },
             { new: true }
           );

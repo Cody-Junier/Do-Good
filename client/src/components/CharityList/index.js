@@ -1,46 +1,50 @@
 import React from 'react';
-// Link not used yet
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 //const CharityList = () => {
 
-  const CharityList = ({ charity, title }) => {
-    if (!charity.length) {
+  const CharityList = ({ charities, title }) => {
+    if (!charities.length) {
       return <h3>No Charities Yet</h3>;
     }
 
   //add images and link for the charity  add real charity links
 
   return (
-    <section>
-
-      {/* This is query data to be passed after queries are set up into the cards*/}
-
-      <div>
+    <div>
       <h3>{title}</h3>
-      {charity &&
-        charity.map(charity => (
-          <div key={charity._id} >
-            <p >
-              {charity.username}
-              thought on {charity.createdAt}
+      {charities &&
+        charities.map(charity => (
+          <div key={charity._id} className="card mb-3">
+            <p className="card-header">
+              <Link
+                to={`/profile/${charity.username}`}
+                style={{ fontWeight: 700 }}
+                className="text-light"
+              >
+                {charity.username}
+              </Link>{' '}
+              charity on {charity.createdAt}
             </p>
-            <div>
-              <p>{charity.description}</p>
-              <p>
-               
-              </p>
+            <div className="card-body">
+              <Link to={`/profile/${charity._id}`}>
+                <p>{charity.description}</p>
+              </Link>
             </div>
           </div>
         ))}
     </div>
-    
+  );
+  };
+  
+  export default CharityList;
 
 
 
 
 
-      {/*Hardcoded card
+      /*Hardcoded card
       
       <main>
         <h1>This is The Charity Header</h1>
@@ -80,10 +84,6 @@ import React from 'react';
           <Link to={`/charity`}>LINK TO SINGLE CHARITY</Link>
         </p>
       </div>
-      </main>*/}
-      
-    </section>
-  );
-};
+      </main>*/
 
-export default CharityList;
+
