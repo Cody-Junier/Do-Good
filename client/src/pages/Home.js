@@ -7,14 +7,14 @@ import CharityList from '../components/CharityList';
 import Auth from '../utils/auth';
 
 import { useQuery } from '@apollo/client';
-import { QUERY_CHARITIES } from '../utils/queries';
+import { QUERY_CHARITY } from '../utils/queries';
 
 
 
 const Home = () => {
 
  
-  const { loading, data } = useQuery(QUERY_CHARITIES);
+  const { loading, data } = useQuery(QUERY_CHARITY);
   const charities = data?.charities || [];
   console.log(charities);
 
@@ -27,9 +27,9 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <CharityList
-              charities={charities}
-              title="List of Charities..."
+            <CharityList render={data => (
+              <ul>{ data }</ul>
+            )}
             />
           )}
       </div>

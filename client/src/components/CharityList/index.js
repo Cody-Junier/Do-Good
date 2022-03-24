@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const CharityList = ({ charities, title }) => {
   if (!charities.length) {
@@ -13,23 +13,14 @@ const CharityList = ({ charities, title }) => {
         charities.map(charity => (
           <div key={charity._id} className="card mb-3">
             <p className="card-header">
-              <Link
-                to={`/add/${charity.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-light"
-              >
                 {charity.username}
-              </Link>{' '}
-              charity on {charity.createdAt}
             </p>
             <div className="card-body">
-              <Link to={`/${charity._id}`}>
-              <p>{charity.charityDescription}</p>
-              <p className="mb-0">
-                Charity Url: {charity.charityUrl} || Click to{' '}
-                {charity.charityUrl ? 'see' : 'visit'} the website!
-              </p>
-              </Link>
+              {charity._id}
+                <p>{charity.charityImg}</p>
+                <p className="mb-0">
+                  description: {charity.charityDescription} 
+                </p>
             </div>
           </div>
         ))}
