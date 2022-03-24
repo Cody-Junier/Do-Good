@@ -2,16 +2,15 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_CHARITIES = gql`
-  query charities{
-      _id
-      charityName
-      charityDescription
-      charityUrl
-      charityImg
-      createdAt
-      username
-    
+query Charities {
+  charities {
+    createdAt
+    username
+    charityUrl
+    charityDescription
+    charityImg
   }
+}
 `;
 
 export const QUERY_CHARITY = gql`
