@@ -4,7 +4,7 @@ import CharityList from '../components/CharityList';
 
 // // add this once logged in features are in place
 // import Auth from '../utils/auth';
-
+import Carousel from '../components/Carousel';
 import { useQuery } from '@apollo/client';
 import { QUERY_CHARITIES
   // , QUERY_ME_BASIC
@@ -25,6 +25,7 @@ const Home = () => {
 
   return (
     <main>
+      <div><Carousel/></div>
       <div>
         <div>
           {loading ? (
@@ -32,7 +33,7 @@ const Home = () => {
           ) : (
             <CharityList
               charities={charities}
-              title="Some Charities.."
+              title="Here are some good causes!"
             />
           )}
         </div>

@@ -34,39 +34,52 @@ const Login = (props) => {
   };
 
   return (
-    <main>
-      <div>
-        <div>
-          <h4>Login</h4>
-          <div>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className='form-input'
-                placeholder='Your email'
-                name='email'
-                type='email'
-                id='email'
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='******'
-                name='password'
-                type='password'
-                id='password'
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button type='submit'>
-                Submit
-              </button>
-            </form>
-            {error && <div>Login failed</div>}
+    <body className="login-page">
+      <div className="log-wrapper">
+        <div className="title">Welcome Back!</div>
+        <form
+          autocomplete="none"
+          classNameName="login-form"
+          onSubmit={handleFormSubmit}
+        >
+          <div className="field">
+            <input
+              className="field"
+              placeholder="Email"
+              name="email"
+              type="email"
+              id="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
           </div>
-        </div>
+          <div className="field">
+            <input
+              className="field"
+              placeholder="Password"
+              name="password"
+              type="password"
+              id="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <div className="forgot-link">
+              <a href="/forgot">Forgot Password?</a>
+            </div>
+            <button className="log-btn" type="submit">
+              Submit
+            </button>
+          </div>
+          <ul className="error-text"></ul>
+          <p>
+            Not a member? <a href="/signup">Sign up now!</a>
+          </p>
+        </form>
+        {error && <div>Login failed</div>}
       </div>
-    </main>
+    </body>
   );
 };
 
