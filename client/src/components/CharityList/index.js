@@ -12,17 +12,17 @@ import React from 'react';
   //add images and link for the charity  add real charity links
 
   return (
-    <div>
+    <div >
       <h3>{title}</h3>
       {charities &&
         charities.map(charity => (
-          <div key={charity._id}>
+          <div key={charity._id} className='forum-box'>
             <p>{charity.username} </p>
             <div>
             
                 <p>{charity.charityDescription}</p>
                 <p>{charity.charityUrl}</p>
-                <img src={charity.charityImg} />
+                <img className= "app-logo"src={charity.charityImg} />
             </div>
           </div>
         ))}

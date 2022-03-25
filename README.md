@@ -8,6 +8,9 @@ Do-Good is a single-page React application that lets its' members suggest a wort
 If you'd like to Do something Good, suggest a cause [here](https://do-good-project.herokuapp.com/).
 
 
+![Screenshot](./Screenshot.png)
+
+
 ## License
 
 [The MIT License](https://mit-license.org/)

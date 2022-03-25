@@ -79,7 +79,8 @@ const AddCharity = () => {
         <div>
         <img alt="not found" width={"250px"} src={charityImage} />
         <br />
-        <button onClick={()=>setCharityImage(null)}>Remove</button>
+        <button className='add-btn'
+        onClick={()=>setCharityImage(null)}>Remove</button>
         </div>
       )}
       <br />
@@ -95,16 +96,17 @@ const AddCharity = () => {
       />
     </div>
     </form>
+    <div className="add-wrapper">
 
-            <h2>Hello</h2>
-        <form onSubmit={e =>handleFormSubmit(e)}>
-        <input className='form-input'
+        <form className="login-form"
+        onSubmit={e =>handleFormSubmit(e)}>
+        <input className='field'
                 placeholder="Charities' Name"
                 value={charityName}
                 id='charityName'
                 onChange={e => setCharityName(e.target.value)}
               />
-        <input className='form-input'
+        <input className='field'
                 placeholder="Charities' URL"
                 value={charityUrl}
                 id='charityUrl'
@@ -112,15 +114,17 @@ const AddCharity = () => {
               />
         <textarea
           placeholder="Tell us about this Charity!"
-          className="charity-description"
+          className="field"
           value={charityDescription}
           id='charityDescription'
           onChange={e => setCharityDescription(e.target.value)}
         ></textarea>
+                
         
     {error && <span>Something went wrong...</span>}
-        <button >Submit</button>
+        <button className='add-btn'>Submit</button>
         </form>
+            </div>
         </>
 
         {/* ) : <h2>Please Log in to add a Charity</h2>} */}

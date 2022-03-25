@@ -36,14 +36,16 @@ const Signup = () => {
   };
 
   return (
-    <main>
-      <div>
-        <div>
+    <main className='login-page'>
+      <div className="log-wrapper">
+        <div className="title">
           <h4>Sign Up</h4>
           <div>
-            <form onSubmit={handleFormSubmit}>
+            <form 
+            classNameName="login-form"
+            onSubmit={handleFormSubmit}>
               <input
-                className='form-input'
+                className='field'
                 placeholder='Your username'
                 name='username'
                 type='username'
@@ -52,7 +54,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className='form-input'
+                className='field'
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -61,7 +63,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className='form-input'
+                className='field'
                 placeholder='******'
                 name='password'
                 type='password'
@@ -69,7 +71,8 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button type='submit'>
+              <button className='log-btn'
+              type='submit'>
                 Submit
               </button>
             </form>

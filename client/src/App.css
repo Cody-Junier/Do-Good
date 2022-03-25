@@ -45,6 +45,11 @@ body {
    text-decoration: none;
    color: #3b3a3a;
  }
+ .nav-ul :hover {  
+  color: red; 
+  /* opacity: 1;  filter: alpha(opacity=100); */
+  transform: translateY(-10px);
+}
 
  .hero-section {
   background-position: 50%;
@@ -179,4 +184,44 @@ background-size: cover;
   top: 100vh;
   position: sticky;
   width: 100%; 
+  z-index: 0;
+}
+
+.add-wrapper {
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding-top: 40px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-wrapper form {
+  padding: 10px 30px 10px 30px;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+
+.add-wrapper form .field {
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  border: 1px solid black;
+  color: black;
+  background: transparent;
+  border-radius: 2px;
+  font-size: 15px;
+  padding: 7px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 }

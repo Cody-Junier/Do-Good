@@ -9,40 +9,10 @@ import React from 'react';
 // toast.configure();
 
 const Footer = () => {
-  // const [product] = React.useState({
-  //   name: "Donate",
-  //   description: "Charity Donate"
-  // });
-
-  // async function handleToken(token, addresses) {
-  //   const response = await axios.post(
-  //     "http://localhost:3001/checkout",
-  //     { token, product }
-  //   );
-  //   const { status } = response.data;
-  //   console.log("Response:", response.data);
-  //   if (status === "success") {
-  //     toast("Success! Check email for details", { type: "success" });
-  //   } else {
-  //     toast("Something went wrong", { type: "error" });
-  //   }
-  // }
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className='container'>
-           Footer
-            {/* <StripeCheckout
-              stripeKey={process.env.REACT_APP_API_KEY}
-              token={handleToken}
-              name="Charity Donate"
-              label='Donate'
-              billingAddress
-              shippingAddress
-              /> */}
-          </div>
-      
+    <footer className="footer">
+    Copyright  2022 All Rights Reserved
     </footer>
-  );
-};
-
-export default Footer;
+    );
+  };
+  export default Footer;
